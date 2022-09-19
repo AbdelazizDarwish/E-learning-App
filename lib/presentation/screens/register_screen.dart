@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:workshop/presentation/screens/layout_screen/layout_screen.dart';
+import 'package:workshop/presentation/screens/login_screen.dart';
 import 'package:workshop/presentation/widgets/text_widget.dart';
 import 'package:workshop/presentation/widgets/textfield_widget.dart';
 
@@ -135,18 +137,22 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 )
               ],
             ),
-            Container(
-              width: double.infinity,
-              height: size.height * 0.06,
-              decoration: const BoxDecoration(
-                  color: Colors.orange,
-                  borderRadius: BorderRadius.all(Radius.circular(15))),
-              child: Center(
-                child: TextComponent(
-                  text: 'Sign up',
-                  size: 18,
-                  color: Colors.white,
-                  weight: FontWeight.bold,
+            GestureDetector(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LayOutScreen())),
+              child: Container(
+                width: double.infinity,
+                height: size.height * 0.06,
+                decoration: const BoxDecoration(
+                    color: Colors.orange,
+                    borderRadius: BorderRadius.all(Radius.circular(15))),
+                child: Center(
+                  child: TextComponent(
+                    text: 'Sign up',
+                    size: 18,
+                    color: Colors.white,
+                    weight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
@@ -180,22 +186,26 @@ class _RegisterScreenState extends State<RegisterScreen> {
             SizedBox(
               height: size.height * 0.02,
             ),
-            Container(
-              width: double.infinity,
-              height: size.height * 0.06,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(
-                  Radius.circular(15),
+            InkWell(
+              onTap: () => Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => LoginScreen())),
+              child: Container(
+                width: double.infinity,
+                height: size.height * 0.06,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: const BorderRadius.all(
+                    Radius.circular(15),
+                  ),
+                  border: Border.all(color: Colors.orange),
                 ),
-                border: Border.all(color: Colors.orange),
-              ),
-              child: Center(
-                child: TextComponent(
-                  text: 'Login',
-                  size: 18,
-                  color: Colors.orange,
-                  weight: FontWeight.bold,
+                child: Center(
+                  child: TextComponent(
+                    text: 'Login',
+                    size: 18,
+                    color: Colors.orange,
+                    weight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
