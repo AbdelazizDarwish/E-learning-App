@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
       Icons.calendar_month,
       Icons.note_add_sharp
     ];
-    List myGridList = [
+    List myGridList = const [
       LecturesGridScreen(),
       SectionsGridScreen(),
       MidtermGridScreen(),
@@ -42,7 +42,7 @@ class HomeScreen extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: GridView.builder(
           itemCount: myList.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: (100 / 90),
             crossAxisSpacing: 15,
